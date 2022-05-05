@@ -70,7 +70,7 @@ exclusivos.push(
       
     }
 )
-console.log (exclusivos)
+console.log(exclusivos)
 
 //Array Clientes para as funcionalidades 3, 4, 5 e 6
 var clientes = [
@@ -99,17 +99,19 @@ var clientes = [
 
 // 3- Buscar por um cliente
 // Pegar id do cliente e retorna o mesmo e caso não exista retorne a mensagem "Cliente não encontrado"
-function presenca (clientes, id){
-    for(i = 0 ; i <= clientes.length ; i++) {
-        if (clientes.id === id){
-            console.log("cliente encontrado")
-        }
-        else{
-            console.log('Cliente não encontrado')
-        }
-    }  
+function presenca(idx){
+  const clienteProcurado = clientes.find((valor)=>{
+      if(valor.id === idx){
+          return true
+      }
+  })
+  if(clienteProcurado){
+    return clienteProcurado
+  }else{
+    return 'Cliente não encontrado'
+  }
 }
-console.log(presenca(clientes.id,1))
+console.log(presenca(2))
 
 // 4- Cadastro de cliente
 // No array de clientes, adicione um objeto no final desse array e liste os clientes
