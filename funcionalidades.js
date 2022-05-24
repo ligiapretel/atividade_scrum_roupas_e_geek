@@ -27,21 +27,13 @@ var produtos = [
     },
   ];
 
-//   produtos.push({nome: "Poltrona Sevilha", preco: 1007.43, tipo:"decoração", qtd:50});
-
-//   console.log(produtos);
-
 function cadastrarNovoProduto(nome,preco,tipo,qtd){
-    produtos.push({
-        nome: nome,
-        preco: preco,
-        tipo: tipo,
-        qtd: qtd
-    });
+    produtos.push({nome:nome,preco:preco,tipo:tipo,qtd:qtd});
     return produtos;
 }
 
-console.log(cadastrarNovoProduto("Estante Dijon",1175.64,"decoração",64));  
+cadastrarNovoProduto("Estante Dijon",1175.64,"decoração",64)
+console.log(produtos) 
 
 // 2- Cadastro de itens exclusivos
 // No array de exclusivos, adicione um objeto no final desse array e liste todos os itens
@@ -61,16 +53,13 @@ var exclusivos = [
     },
   ];
 
-exclusivos.push(
-    {
-        nome: "Chapéu de Palha",
-        dataLancamento: "09/09/2022",
-        ehBrinde: true,
-        brand: "One Piece",
-      
-    }
-)
-console.log(exclusivos)
+  function cadastrarItemExclusivo(nome,dataLancamento,ehBrinde,brand){
+    exclusivos.push({nome:nome,dataLancamento:dataLancamento,ehBrinde:ehBrinde,brand:brand});
+    return exclusivos;
+  }
+
+  cadastrarItemExclusivo('Drone do Mickey','22/05/2022',true,'Disney')
+  console.log(exclusivos)
 
 //Array Clientes para as funcionalidades 3, 4, 5 e 6
 var clientes = [
@@ -97,35 +86,35 @@ var clientes = [
     },
   ];
 
-// 3- Buscar por um cliente
-// Pegar id do cliente e retorna o mesmo e caso não exista retorne a mensagem "Cliente não encontrado"
-function presenca(idx){
-  const clienteProcurado = clientes.find((valor)=>{
-      if(valor.id === idx){
-          return true
-      }
-  })
-  if(clienteProcurado){
-    return clienteProcurado
-  }else{
-    return 'Cliente não encontrado'
-  }
-}
-console.log(presenca(2))
+// // 3- Buscar por um cliente
+// // Pegar id do cliente e retorna o mesmo e caso não exista retorne a mensagem "Cliente não encontrado"
+// function presenca(idx){
+//   const clienteProcurado = clientes.find((valor)=>{
+//       if(valor.id === idx){
+//           return true
+//       }
+//   })
+//   if(clienteProcurado){
+//     return clienteProcurado
+//   }else{
+//     return 'Cliente não encontrado'
+//   }
+// }
+// console.log(presenca(2))
 
-// 4- Cadastro de cliente
-// No array de clientes, adicione um objeto no final desse array e liste os clientes
-var objetocliente =  {  
-    id: 4,
-    nome: "Manuel",
-    sobrenome: "Sobrinho",
-    idade: 23,
-    contato: "(48) 9 3333-3333", 
-}
+// // 4- Cadastro de cliente
+// // No array de clientes, adicione um objeto no final desse array e liste os clientes
+// var objetocliente =  {  
+//     id: 4,
+//     nome: "Manuel",
+//     sobrenome: "Sobrinho",
+//     idade: 23,
+//     contato: "(48) 9 3333-3333", 
+// }
 
-clientes.push(objetocliente)
+// clientes.push(objetocliente)
     
-console.log(clientes)
+// console.log(clientes)
 
 // 5- Listar clientes entre duas idades
 // Crie uma função que ao receber a idade inicial e final e em seguida retorne todos os clientes que estão nesse intervalo
